@@ -10,6 +10,7 @@ import { Emprestimo } from '../models/emprestimo.model';
 })
 export class AppFinanceComponent {
   isCreating = false;
+  
   emprestimo: Emprestimo = {
     numero_conta: '',
     nome_completo: '',
@@ -21,9 +22,9 @@ export class AppFinanceComponent {
     duracao_emprestimo: 2, // ou outro valor padrão
     propriedade: 'Rural', // ou 'Semi-Urban', 'Urban' dependendo do valor padrão desejado
     credito: 'Between 300 to 500', // ou 'Above 500' dependendo do valor padrão desejado
-    renda_mensal_requerente: '',
-    renda_mensal_co_requerente: '',
-    valor_emprestimo: '',
+    renda_mensal_requerente: 0,
+    renda_mensal_co_requerente: 0,
+    valor_emprestimo: 0,
     tipo_credito: 'Salario', // ou 'Pessoal', 'Automovel', 'Particular', 'Habitacao', 'Seguro' dependendo do valor padrão desejado
     email: ''
   };
@@ -38,9 +39,11 @@ export class AppFinanceComponent {
         <p><strong>Número da Conta:</strong> ${this.emprestimo.numero_conta}</p>
         <p><strong>Nome Completo:</strong> ${this.emprestimo.nome_completo}</p>
         <p><strong>Resultado da Predição:</strong> ${this.emprestimo.resultado_predicao === 0
-          ? 'Crédito não aceito'
-          : 'Crédito aceito'
+          ? 'Crédito não aprovado'
+          : 'Crédito aprovado'
         }</p>
+        <hr>
+        <p><strong>Resultado enviado no E-mail:</strong> ${this.emprestimo.email}</p>
       `,
     });
   }
@@ -66,7 +69,7 @@ export class AppFinanceComponent {
         // Mostra um SweetAlert2 de sucesso
         Swal.fire({
           icon: 'success',
-          title: 'Crédito criado com sucesso!',
+          title: 'Crédito analisado com sucesso!',
           showConfirmButton: false,
           timer: 1500 // Fecha automaticamente após 1,5 segundos
         });
@@ -91,7 +94,7 @@ export class AppFinanceComponent {
   
         Swal.fire({
           icon: 'error',
-          title: 'Erro ao criar o empréstimo',
+          title: 'Erro ao criar o crédito',
           text: errorMessage
         });
         console.error(error);
