@@ -10,12 +10,14 @@ import { AuthModule } from './auth/auth.module';
 import { AppFinanceComponent } from './app-finance/app-finance.component';
 import { EmprestimoService } from './services/emprestimo.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AppDashboardComponent } from './app-dashboard/app-dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     IndexComponent,
-    AppFinanceComponent
+    AppFinanceComponent,
+    AppDashboardComponent
   ],
   imports: [
     BrowserModule,

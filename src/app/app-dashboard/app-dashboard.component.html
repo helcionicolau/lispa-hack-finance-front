@@ -590,27 +590,18 @@
                                 <a routerLink="/app-dashboard">
                                     <i class="metismenu-icon pe-7s-rocket"></i>
                                     Dashboards
-                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                 </a>
-                                <ul>
-                                    <li>
-                                        <a href="index.html.htm">
-                                            <i class="metismenu-icon"></i>
-                                            Ver
-                                        </a>
-                                    </li>
-                                </ul>
                             </li>
                             <li class="app-sidebar__heading">Menu</li>
                             <li>
-                                <a href="#">
+                                <a>
                                     <i class="metismenu-icon pe-7s-rocket"></i>
                                     Gestão de Créditos
                                     <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                 </a>
                                 <ul>
                                     <li>
-                                        <a href="index.html.htm">
+                                        <a routerLink="/app">
                                             <i class="metismenu-icon"></i>
                                             Crédito
                                         </a>
@@ -637,7 +628,7 @@
                                     <i class="pe-7s-graph text-success"></i>
                                 </div>
                                 <div>
-                                    Formulário - Crédito Fácil
+                                    Painel de Controlo - Crédito Fácil
                                     <div class="page-title-subheading">
                                         Diminuir
                                         Não importa a quantidade de dados
@@ -662,176 +653,15 @@
                     <div class="tab-content">
                         <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
                             <div class="main-card mb-3 card">
-                                <div class="card-body">
-                                    <h5 class="card-title">Aprendizado Máquina</h5>
-
-                                    <form class="">
-
-                                        <!-- Campos do modelo de empréstimo -->
-
-                                        <div class="form-row">
-                                            <div class="col-md-6">
-                                                <div class="position-relative form-group">
-                                                    <label for="numeroConta" class>Número da Conta</label>
-                                                    <input [(ngModel)]="emprestimo.numero_conta" name="numero_conta"
-                                                        id="numero_conta" placeholder="Número da Conta" type="text"
-                                                        class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="position-relative form-group">
-                                                    <label for="nomeCompleto" class>Nome Completo</label>
-                                                    <input [(ngModel)]="emprestimo.nome_completo" name="nome_completo"
-                                                        id="nome_completo" placeholder="Nome Completo" type="text"
-                                                        class="form-control">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-row">
-                                            <div class="col-md-6">
-                                                <div class="position-relative form-group">
-                                                    <label for="genero" class>Gênero</label>
-                                                    <select [(ngModel)]="emprestimo.genero" name="genero" id="genero"
-                                                        class="form-control">
-                                                        <option value="Female">Feminino</option>
-                                                        <option value="Male">Masculino</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="position-relative form-group">
-                                                    <label for="estadoCivil" class>Estado Civil</label>
-                                                    <select [(ngModel)]="emprestimo.estado_civil" name="estado_civil"
-                                                        id="estado_civil" class="form-control">
-                                                        <option value="Yes">Casado</option>
-                                                        <option value="No">Solteiro</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="position-relative form-group">
-                                            <label for="dependentes" class>Dependentes</label>
-                                            <select [(ngModel)]="emprestimo.dependentes" name="dependentes"
-                                                id="dependentes" class="form-control">
-                                                <option value="No">Não</option>
-                                                <option value="One">Um</option>
-                                                <option value="Two">Dois</option>
-                                                <option value="More than Two">Mais do que um</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="position-relative form-group">
-                                            <label for="educacao" class>Educação</label>
-                                            <select [(ngModel)]="emprestimo.educacao" name="educacao" id="educacao"
-                                                class="form-control">
-                                                <option value="Not Graduate">Não Graduado</option>
-                                                <option value="Graduate">Graduado</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="position-relative form-group">
-                                            <label for="emprego" class>Emprego</label>
-                                            <select [(ngModel)]="emprestimo.emprego" name="emprego" id="emprego"
-                                                class="form-control">
-                                                <option value="Job">Trabalhador</option>
-                                                <option value="Business">Empreendedor</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="position-relative form-group">
-                                            <label for="duracao_emprestimo" class>Duração do Empréstimo</label>
-                                            <select [(ngModel)]="emprestimo.duracao_emprestimo"
-                                                name="duracao_emprestimo" id="duracao_emprestimo" class="form-control">
-                                                <option value="60">2 Mêses</option>
-                                                <option value="180">6 Mêses</option>
-                                                <option value="240">8 Mêses</option>
-                                                <option value="360">1 Ano</option>
-                                                <option value="480">16 Mês</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="position-relative form-group">
-                                            <label for="prop" class>Propriedade/Local</label>
-                                            <select [(ngModel)]="emprestimo.propriedade" name="propriedade"
-                                                id="propriedade" class="form-control">
-                                                <option value="Rural">Rural</option>
-                                                <option value="Semi-Urban">Semi-Urbano</option>
-                                                <option value="Urban">Urbano</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="position-relative form-group">
-                                            <label for="cred" class>Crédito</label>
-                                            <select [(ngModel)]="emprestimo.credito" name="credito" id="credito"
-                                                class="form-control">
-                                                <option value="Between 300 to 500">Entre Kzs 300.000,00 a Kzs 500.000,00
-                                                </option>
-                                                <option value="Above 500">Àcima de 500.000,00 Kzs</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="form-row">
-                                            <div class="col-md-6">
-                                                <div class="position-relative form-group">
-                                                    <label for="rendaMensalRequerente" class>Renda Mensal do
-                                                        Requerente</label>
-                                                    <input [(ngModel)]="emprestimo.renda_mensal_requerente"
-                                                        name="renda_mensal_requerente" id="renda_mensal_requerente"
-                                                        placeholder="Renda Mensal do Requerente" type="number"
-                                                        class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="position-relative form-group">
-                                                    <label for="rendaMensalCoRequerente" class>Renda Mensal do
-                                                        Co-Requerente</label>
-                                                    <input [(ngModel)]="emprestimo.renda_mensal_co_requerente"
-                                                        name="renda_mensal_co_requerente"
-                                                        id="renda_mensal_co_requerente"
-                                                        placeholder="Renda Mensal do Co-Requerente" type="number"
-                                                        class="form-control">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="position-relative form-group">
-                                            <label for="valorEmprestimo" class>Valor do Empréstimo</label>
-                                            <input [(ngModel)]="emprestimo.valor_emprestimo" name="valor_emprestimo"
-                                                id="valor_emprestimo" placeholder="Valor do Empréstimo" type="number"
-                                                class="form-control">
-                                        </div>
-
-                                        <div class="position-relative form-group">
-                                            <label for="tipoCredito" class>Tipo de Crédito</label>
-                                            <select [(ngModel)]="emprestimo.tipo_credito" name="tipo_credito"
-                                                id="tipo_credito" class="form-control">
-                                                <option value="Salario">Salário</option>
-                                                <option value="Pessoal">Pessoal</option>
-                                                <option value="Automovel">Automóvel</option>
-                                                <option value="Particular">Particular</option>
-                                                <option value="Habitacao">Habitação</option>
-                                                <option value="Seguro">Seguro</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="position-relative form-group">
-                                            <label for="email" class>E-mail</label>
-                                            <input [(ngModel)]="emprestimo.email" name="email" id="email"
-                                                placeholder="E-mail" type="email" class="form-control">
-                                        </div>
-
-                                        <button class="mt-2 btn btn-primary" [disabled]="isCreating"
-                                            (click)="criarEmprestimo()">
-                                            {{ isCreating ? 'Analisando os dados...' : 'Calcular' }}
-                                        </button>
-
-                                    </form>
-
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Aprendizado Máquina - Dados Analíticos</h5>
+                        
+                                    <iframe title="Report Section" width="100%" height="800"
+                                        src="https://app.powerbi.com/view?r=eyJrIjoiNmU4OTBkM2YtZThjZi00MDcyLTlmNDctODRjMjIyNjg4OWYxIiwidCI6IjliZGJkZTk2LWQzNjQtNDQ2Yy04MjIzLTlmNmQ3NTI3ZjNmNSIsImMiOjl9"
+                                        frameborder="0" allowFullScreen="true"></iframe>
                                 </div>
                             </div>
-                        </div>
+                        </div>                                               
                         <div class="tab-pane tabs-animation fade" id="tab-content-1" role="tabpanel">
                             <div class="main-card mb-3 card">
                                 <div class="card-body">
