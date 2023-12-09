@@ -9,7 +9,6 @@ const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'app-dashboard', component: AppDashboardComponent },
   { path: 'app', component: AppFinanceComponent },
-  { path: 'login', component: LoginComponent },
   { path: 'registrar', component: SignupComponent },
 ];
 
