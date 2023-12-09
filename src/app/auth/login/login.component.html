@@ -78,14 +78,28 @@
                     </div>
                     <div class="h-100 d-flex bg-white justify-content-center align-items-center col-md-12 col-lg-8">
                         <div class="mx-auto app-login-box col-sm-12 col-md-10 col-lg-9">
-                            <div class="app-logo"></div>
+                            <style>
+                                .app-logo2 {
+                                    width: 1000px;
+                                    /* Defina a largura desejada para o logotipo */
+                                    height: 100px;
+                                    /* Defina a altura desejada para o logotipo */
+                                    background-image: url('assets/images/IDlayout.png');
+                                    /* Adicione um GIF como imagem de fundo para o logotipo */
+                                    background-repeat: no-repeat;
+                                    margin-bottom: 15px;
+                                    /* Impede que a imagem se repita */
+                                    /* Adicione qualquer outra propriedade de estilo conforme necessário */
+                                }
+                            </style>
+                            <div class="app-logo2"></div>
                             <h4 class="mb-0">
-                                <span class="d-block text-uppercase fw-bold">Sistema de gestão de rondas e
-                                    supervisão</span>
+                                <span class="d-block text-uppercase fw-bold">Crédito Fácil - No conforto de sua
+                                    casa.</span>
                                 <!-- <span>lorem ipsum lorem ipsum.</span> -->
                             </h4>
-                            <h6 class="mt-3">Sem conta ? <a routerLink="/signup" class="text-primary">Inscreva-se
-                                    agora</a></h6>
+                            <h6 class="mt-3">Sem conta ? <a (click)="abrirWhatsApp()" class="text-primary">Contacte o
+                                    suporte.</a></h6>
                             <div class="divider row"></div>
                             <div>
                                 <form class>
@@ -107,7 +121,11 @@
                                         </div>
                                     </div>
                                     <div class="position-relative">
-                                        <label for="exampleCheck" class="form-check-label">Iniciar sessão com</label>
+                                        <!-- Informações de login para teste -->
+                                        <p class="text-muted">Para testar o login, use as seguintes informações:</p>
+                                        <p class="text-muted"><strong>Email:</strong> visita@gmail.com</p>
+                                        <p class="text-muted"><strong>Senha:</strong> senha123</p>
+
                                     </div>
                                     <div class="divider row"></div>
                                     <!-- autenticação -->

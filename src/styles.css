@@ -2,6 +2,9 @@
 *
 * DON'T EDIT THE CSS FILE DIRECTLY, since it is automatically generated from
 * the LESS templates.*/
+/* @import 'bootstrap/dist/css/bootstrap.min.css' */
+
+
 .fancytree-helper-hidden {
     display: none
 }

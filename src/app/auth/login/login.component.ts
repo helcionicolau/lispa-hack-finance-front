@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Credentials } from 'src/app/models/usuario.model';
-import { LoginService } from 'src/app/services/login.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -10,26 +8,31 @@ import Swal from 'sweetalert2';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  credentials: Credentials = {
-    email: '',
-    senha: ''
+  credentials = {
+    email: 'visita@gmail.com', // Coloque o email desejado para simulação
+    senha: 'senha123' // Coloque a senha desejada para simulação
   };
   isLoading = false;
 
-  constructor(private authService: LoginService, private router: Router) {}
+  numeroTelefone = '+244924423890';
+
+  abrirWhatsApp() {
+    const linkWhatsApp = `https://wa.me/${this.numeroTelefone}`;
+    window.open(linkWhatsApp, '_blank');
+  }
+
+  constructor(private router: Router) {}
 
   async login(): Promise<void> {
     this.isLoading = true;
 
     try {
-      console.log('Antes de chamar authService.login');
-      const loginSuccessful = await this.authService.login(this.credentials);
-      console.log('Depois de chamar authService.login');
-      
+      // Simulação de login estático
+      const loginSuccessful = this.simulateStaticLogin();
+
       this.isLoading = false;
 
       if (loginSuccessful) {
-        console.log('Login bem-sucedido. Navegando para /app');
         Swal.fire({
           icon: 'success',
           title: 'Login bem-sucedido',
@@ -39,7 +42,6 @@ export class LoginComponent {
         });
         this.router.navigate(['/app']);
       } else {
-        console.log('Erro no login. Navegando para /login');
         Swal.fire({
           icon: 'error',
           title: 'Erro no login',
@@ -52,5 +54,14 @@ export class LoginComponent {
       this.isLoading = false;
       console.error(error);
     }
+  }
+
+  // Função para simular o login estático
+  private simulateStaticLogin(): boolean {
+    // Comparar as credenciais com as credenciais estáticas
+    return (
+      this.credentials.email.toLowerCase() === 'visita@gmail.com' &&
+      this.credentials.senha === 'senha123'
+    );
   }
 }

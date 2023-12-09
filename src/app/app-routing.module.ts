@@ -4,10 +4,9 @@ import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { AppFinanceComponent } from './app-finance/app-finance.component';
 import { AppDashboardComponent } from './app-dashboard/app-dashboard.component';
-import { IndexComponent } from './index/index.component';
 
 const routes: Routes = [
-  { path: '', component: IndexComponent },
+  { path: '', component: LoginComponent },
   { path: 'app-dashboard', component: AppDashboardComponent },
   { path: 'app', component: AppFinanceComponent },
   { path: 'login', component: LoginComponent },
